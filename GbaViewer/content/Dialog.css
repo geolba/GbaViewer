@@ -1,0 +1,261 @@
+/* Dialog 
+ * 
+ * Styling Dialog includes two sections: Dialog and Tooltip & TooltipDialog
+ * 
+ * Dialog:
+ * 1. Dialog (default styling): 
+ * 		.dijitDialog - styles for dialog's bounding box
+ *
+ * 2. Dialog title 
+ * 		.dijitDialogTitleBar - styles for the title container at the top of dialog
+ * 		.dijitDialogTitle - the text container in dialog title
+ * 
+ * 3. Dialog content 
+ * 		.dijitDialogPaneContent - main container for content area and action bar
+ * 		.dijitDialogPaneContentArea - styles for content container
+ * 
+ * 4. Dialog action bar 
+ * 		.dijitDialogPaneActionBar - styles for action buttons lie at the bottom of dialog pane content
+ * 
+ * 5. Dialog underlay 
+ * 		.dijitDialogUnderlay - div under the dialog which used for separate dialog and page content
+ * 
+ * 
+ * Tooltip & TooltipDialog:
+ * 1. tooltip content container: 
+ * 		.dijitTooltipContainer - tooltip content container
+ *
+ * 2. tooltip connector: 
+ * 		.dijitTooltipConnector - tooltip anchor includes 4 direction(up, down, left, right)
+ */
+/*harjeet*/
+.steel .dijitDialog {
+    border: 1px solid #769dc0;
+    /*-moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px;*/
+     border-radius: 3px;
+    /*-moz-box-shadow: 3px 3px 4px #636363;
+    -moz-box-shadow: #636363 3px 3px 4px;*/
+    box-shadow: #636363 3px 3px 4px;
+   
+}
+    /*.steel .dijitDialog {
+    -moz-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 3px 3px 4px #636363;
+    border: 1px solid #D3D3D3;
+}*/
+    /*harjeet*/
+    .steel .dijitDialog.dijitDialogHover {
+        border: 1px solid #ED8714;
+    }
+/*harjeet*/
+.steel .dijitDialogPaneContent {
+    background: #fff repeat-x top left;
+    /*border-top: 1px solid #769dc0;*/
+    border-top: 1px solid #9D9DA1;
+    padding: 10px 8px;
+    position: relative;
+}
+
+.steel .dijitDialogPaneContentArea {
+    /* trick to get action bar (gray bar at bottom with OK/cancel buttons) to span from
+	 * left to right but still indent dialog content
+	 */
+    margin: -10px -8px;
+    padding: 10px 8px;
+}
+
+.steel .dijitDialogPaneActionBar {
+    /* gray bar at bottom of dialog with OK/Cancel buttons */
+    background-color: #F8F8F8;
+    padding: 3px 5px 2px 7px;
+    text-align: right;
+    border-top: 1px solid #769DC0;
+    margin: 10px -8px -10px;
+}
+
+    .steel .dijitDialogPaneActionBar .dijitButton {
+        float: none;
+    }
+/*harjeet*/
+.steel .dijitDialogTitleBar {
+    /* outer container for the titlebar of the dialog */
+    border: 1px solid #fff;
+    border-top: none;
+    background-color: #abd6ff;
+    background-image: url("images/titlebar.png");
+    background-repeat: repeat-x;
+    padding: 6px 7px;
+    background: #ECF1F5;
+    /*background-image: -moz-linear-gradient(top, #F7FAFD, #D3D3D3);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#F7FAFD), to(#D3D3D3));*/
+    background-image: linear-gradient(top, #F7FAFD, #D3D3D3);
+}
+
+.steel .dijitDialogTitle {
+    /* typography and styling of the dialog title */
+    padding: 0 1px;
+    font-size: 1.091em;
+}
+
+.steel .dijitDialogCloseIcon {
+    /* the default close icon for the dialog */
+    background: url("images/dialogCloseIcon.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 5px;
+    height: 15px;
+    width: 21px;
+}
+
+.dj_ie6 .steel .dijitDialogCloseIcon {
+    background-image: url("images/dialogCloseIcon8bit.png");
+}
+
+.steel .dijitDialogCloseIconHover {
+    background-position: -21px;
+}
+
+.steel .dijitDialogCloseIconActive {
+    background-position: -42px;
+}
+
+/* Tooltip and TooltipDialog */
+
+.steel .dijitTooltip,
+.steel .dijitTooltipDialog {
+    /* the outermost dom node, holding the connector and container */
+    background: transparent; /* make the area on the sides of the arrow transparent */
+}
+/*harjeet*/
+.dijitTooltipBelow {
+    /* leave room for arrow above content */
+    padding-top: 13px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding: 13px 3px 3px;
+}
+/*harjeet*/
+.dijitTooltipAbove {
+    /* leave room for arrow below content */
+    /*padding-bottom: 13px;
+	padding-left:3px;
+	padding-right:3px;*/
+    padding: 3px 3px 13px;
+}
+/*harjeet*/
+.steel .dijitTooltipContainer {
+    /* the part with the text */
+    background-color: #fff;
+    background-image: url("images/tooltip.png");
+    background-repeat: repeat-x;
+    background-position: -575px 100%;
+    /*border:1px solid #769DC0;*/
+    border: 1px solid #9D9DA1;
+    padding: 6px 8px;
+    /*-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;*/
+    border-radius: 4px;
+    /*-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.25);*/
+    box-shadow: 0 0 5px rgba(0,0,0,0.25);
+    font-size: 1em;
+}
+
+.dj_ie6 .steel .dijitTooltipContainer {
+    background-image: none;
+}
+
+.steel .dijitTooltipConnector {
+    /* the arrow piece */
+    border: 0;
+    z-index: 2;
+    background-image: url("images/tooltip.png");
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 14px;
+}
+
+.dj_ie6 .steel .dijitTooltipConnector {
+    background-image: url("images/tooltip8bit.png");
+}
+
+.steel .dijitTooltipABRight .dijitTooltipConnector {
+    /* above or below tooltip, but the arrow appears on the right,
+		and the right edges of target and tooltip are aligned rather than the left */
+    left: auto !important;
+    right: 3px;
+}
+
+.steel .dijitTooltipBelow .dijitTooltipConnector {
+    /* the arrow piece for tooltips below an element */
+    top: 0;
+    left: 3px;
+    background-position: -31px 0;
+    width: 16px;
+    height: 14px;
+}
+
+.steel .dijitTooltipAbove .dijitTooltipConnector {
+    /* the arrow piece for tooltips above an element */
+    bottom: 0;
+    left: 3px;
+    background-position: -15px 0;
+    width: 16px;
+    height: 14px;
+}
+
+.dj_ie7 .steel .dijitTooltipAbove .dijitTooltipConnector,
+.dj_ie6 .steel .dijitTooltipAbove .dijitTooltipConnector {
+    bottom: -1px;
+}
+
+.steel .dijitTooltipLeft {
+    padding-right: 14px;
+}
+
+.dj_ie6 .steel .dijitTooltipLeft {
+    padding-left: 15px;
+}
+
+.steel .dijitTooltipLeft .dijitTooltipConnector {
+    /* the arrow piece for tooltips to the left of an element, bottom borders aligned */
+    right: 0;
+    bottom: 3px;
+    background-position: 0 0;
+    width: 16px;
+    height: 14px;
+}
+
+.steel .dijitTooltipRight {
+    padding-left: 14px;
+}
+
+    .steel .dijitTooltipRight .dijitTooltipConnector {
+        /* the arrow piece for tooltips to the right of an element, bottom borders aligned */
+        left: 0;
+        bottom: 3px;
+        background-position: -48px 0;
+        width: 16px;
+        height: 14px;
+    }
+
+.steel .dijitDialogUnderlay {
+    background: none repeat scroll 0 0 #FFFFFF !important;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*z-index:9999;*/
+}
+
+/* Dialog */
+.steel .dijitDialogRtl .dijitDialogCloseIcon {
+    right: auto;
+    left: 5px;
+}
+
+.steel .dijitDialogRtl .dijitDialogPaneActionBar {
+    text-align: left;
+    padding: 3px 7px 2px 5px;
+}

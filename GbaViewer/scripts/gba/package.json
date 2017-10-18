@@ -1,0 +1,12 @@
+﻿{
+    "name": "gba",
+    "version": "1.0",
+    "keywords": ["JavaScript", "Dojo", "Toolkit", "DojoX"],
+    "author": "GBA",
+    "directories": {
+        "lib": "."
+    },
+    "description": "modules for GbaViewer",   
+    "homepage": "http://www.geologie.ac.at",
+    "dojoBuild": "gba.profile.js"
+}

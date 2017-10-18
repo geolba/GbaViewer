@@ -1,0 +1,10 @@
+{
+    "name": "app",
+    "description": "GbaViewer",
+    "version": "1.0",
+     "keywords": ["JavaScript", "Dojo", "Toolkit", "DojoX"],
+     "author":  "GBA",   
+    "main": "main",   
+    "homepage": "http://www.geologie.ac.at",
+    "dojoBuild": "app.profile.js"
+}

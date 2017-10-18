@@ -1,0 +1,681 @@
+﻿@charset "UTF-8";
+
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input, hr {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, th, a {
+    font-weight: normal;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+fieldset, img, hr {
+    border: none;
+    outline: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    vertical-align: top;
+}
+
+a {
+    color: #000;
+}
+
+h1 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Temp styles */
+#mainWindow {
+    height: 100%;
+    width: 100%;
+}
+
+
+.content, .sidebar, .footer {
+    border-top: none;
+}
+
+/* Core styles */
+#banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    /*padding: 0 30px 0 30px;*/
+    background-color: rgb(94,94,94); /*helles grau laut Schiegl */
+    z-index: 5;
+}
+
+#headerArea {
+    /*position: relative;
+    height: 100%;
+    width: 100%;*/
+    position: absolute;
+    height: auto;
+    width: auto;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    /*margin:30px;*/
+    margin: 0 30px 0 30px;
+    overflow: visible;
+}
+
+
+#logoArea {
+    float: left;
+    width: 170px;
+    height: 100%;
+    line-height: 60px;
+    text-align: left;
+}
+
+    #logoArea img {
+        vertical-align: bottom;
+    }
+
+#titleArea {
+    position: absolute;
+    left: 170px;
+    right: 270px;
+    float: left;
+    height: 100%;
+    line-height: 60px;
+    text-align: left;
+    /*background-color: blue;*/
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: white;
+}
+
+#subtitle, #subtitle:visited, #subtitle:active, #subtitle:hover {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    vertical-align: sub;
+    line-height: 20px;
+}
+
+#searchArea {
+    position: relative;
+    float: right;
+    width: 270px;
+    height: 100%;
+}
+
+#search {
+    height: 28px;
+    position: absolute;
+    /*top: 25%;*/
+    top: 16px;
+    right: 0;
+    /*margin-left: -100px;*/
+    /*height: 100%;*/
+    width: 225px;
+}
+
+.selected {
+    height: 35px;
+    background: #c4c4c4;
+}
+
+#mainWindow > .content {
+    position: fixed;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+.sidebar {
+    position: relative; /* needed for stacking */
+    /*width: 20%;*/
+    height: 100%;
+    border-top: none;
+}
+
+    .sidebar.left {
+        /*background-color: rgb(244,244,244);*/
+        float: left;
+        border-left: none;
+        /*display: table-cell;*/
+        width: 25%;
+        min-width: 300px;
+        height: 100%;
+    }
+
+#leftPane {
+    font-size: 0.9em;
+    color: black;
+}
+
+#wrapper {
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    bottom: 75px;
+    overflow-y: hidden;
+}
+
+#legendHeader {
+    padding: 0 30px 5px 30px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+#legendHeaderText {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#legendHeader h2 {
+    color: black;
+    font-weight: bold;
+}
+
+#descriptionPanel {
+    max-height: 60%;
+    overflow: auto;
+    width: 100%;
+}
+
+.descriptionDesktop {
+    padding: 15px 30px 15px 30px;
+    text-align: justify;
+}
+
+#legendPanel {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    /*margin: auto;*/ /* Magic! */
+}
+
+.legendDesktop {
+    padding: 15px 30px 15px 30px;
+}
+
+#logoPanel {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+}
+
+    #logoPanel > a > img {
+        padding-left: 30px;
+        max-height: 100%;
+        max-width: 90%;
+    }
+/*.clearfix {
+    clear: both;
+}*/
+
+.sidebar.right {
+    border: none;
+    max-width: calc(100% - 300px);
+    width: 75%;
+    /*min-width:400px;*/
+    float: left;
+}
+
+#div_map {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#ui-esri-map {
+    height: auto;
+    width: auto;
+    /*margin:30px 30px 30px 0;*/
+}
+
+.mapDesktop {
+    position: absolute;
+    bottom: 30px;
+    top: 30px;
+    left: 0;
+    right: 30px;
+}
+
+#bottomPane {
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.9, rgb(94, 94, 94)), color-stop(1, rgb(0, 0, 0)) );
+    background-image: -o-linear-gradient(top, rgb(94, 94, 94) 90%, rgb(0, 0, 0) 100%);
+    background-image: -moz-linear-gradient(top, rgb(94, 94, 94) 90%, rgb(0, 0, 0) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(94, 94, 94) 90%, rgb(0, 0, 0) 100%);
+    background-image: -ms-linear-gradient(top, rgb(94, 94, 94) 90%, rgb(0, 0, 0) 100%);
+    background-image: linear-gradient(to top, rgb(94, 94, 94) 90%, rgb(0, 0, 0) 100%);
+    height: 60px;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#ownerArea {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+#fText {
+    float: left;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    max-width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+    #fText span {
+        vertical-align: middle;
+        /*line-height: 14px;*/
+    }
+
+.tabSpace {
+    float: left;
+    width: 15px;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+}
+
+#creativeCommons {
+    float: left;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    max-width: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+    #creativeCommons span, #creativeCommons img {
+        vertical-align: middle;
+        /*line-height: 10px;*/
+    }
+
+#socialButtons {
+    position: relative;
+    vertical-align: middle;
+    height: 100%;
+    line-height: 60px;
+    float: right;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+    #socialButtons a, #socialButtons div {
+        vertical-align: middle;
+        line-height: 15px;
+    }
+
+.share-twitter {
+    border: 1px solid #00CDCD;
+    padding: 2px 10px;
+    background-color: #48D1CC;
+    color: #ffffff;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;*/
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.share-google {
+    border: 1px solid #D8472A;
+    padding: 2px 10px;
+    background-color: #D8472A;
+    color: #ffffff;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius:4px;
+    -khtml-border-radius:4px;*/
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.share-facebook {
+    border: 1px solid #3B5898;
+    padding: 2px 10px;
+    margin-right: 10px;
+    background-color: #3B5898;
+    color: #FFFFFF;
+    /*-moz-border-radius: 4px;
+    -webkit-border-radius:4px;
+    -khtml-border-radius:4px;*/
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+#progressArea {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 30;
+}
+
+#scalebar {
+    position: absolute;
+    width: 260px;
+    /*background-color: rgba(250,250,250,0.8);*/
+    text-align: center;
+    /*border-radius: 2px;*/
+    bottom: 10px;
+    left: 20px;
+    z-index: 30;
+    height: 30px;
+}
+
+.esriScalebar {
+    /*height:20px;*/
+    /*width:240px;*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -120px;
+    /*margin:-10px 0 0 -120px;*/
+}
+
+/*Koordinatenanzeige*/
+#info {
+    position: absolute;
+    width: 260px;
+    background-color: rgba(250,250,250,0.8);
+    text-align: center;
+    border-radius: 2px;
+    /*-moz-box-shadow: 1px 1px 3px #555;
+    -webkit-box-shadow: 1px 1px 3px #555;
+    box-shadow: 1px 1px 3px #555;*/
+    bottom: 10px;
+    left: 50%;
+    margin-left: -130px;
+    /*bottom: 5px;
+    left: 20px;*/
+    z-index: 50;
+    font-size: 12px;
+}
+
+/* customize geocoder appearance!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.simpleGeocoder .esriGeocoder {
+    border: 0;
+    height: 100%;
+    /*-moz-border-radius: 2px;
+    -webkit-border-radius: 2px;*/
+    border-radius: 2px;
+    /*-moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;*/
+    box-shadow: 0 0 5px #888;
+    background-color: #e2e2e2;
+}
+    /*.simpleGeocoder .esriGeocoderIcon { 
+        display: none;
+        height: 64px;
+        width: 64px;
+      }*/
+    /*.simpleGeocoder .esriGeocoder .esriGeocoderReset {
+        margin: 0;
+        background-color:#000;
+      }*/
+    /* show an x icon to clear the current value */
+    /*.simpleGeocoder .esriGeocoderHasValue .esriGeocoderReset {
+        cursor: pointer; 
+        display: block; 
+        background: url("http://dl.dropbox.com/u/2654618/geocoder-reset.gif") no-repeat;
+      }*/
+
+    /* use a different loading icon */
+    /*.simpleGeocoder .esriGeocoderLoading .esriGeocoderReset {
+        background: url("http://dl.dropbox.com/u/2654618/geocoder-loading.gif") center center no-repeat;
+      }*/
+    /* make input larger */
+    /*.simpleGeocoder .esriGeocoder input {
+        font-size: 2.4em;
+        margin: 0 0 0 1.25%;
+        padding: 1% 0 1% 0;
+        width: 90.75%;
+         background-color:green;
+      }*/
+    /* use gray in the input box instead of black */
+    .simpleGeocoder .esriGeocoder input,
+    .simpleGeocoder .esriGeocoder input:focus {
+        color: #686868;
+    }
+/* get rid of rounded gray border, use a subtle box shadow instead */
+.simpleGeocoder .esriGeocoderResults {
+    background-color: #e2e2e2;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 5px 5px -5px #888;
+}
+
+.simpleGeocoder .esriGeocoderResultLast {
+    border-radius: 2px;
+}
+
+.simpleGeocoder .esriGeocoderResult:hover,
+.simpleGeocoder .esriGeocoderResultEven:focus,
+.simpleGeocoder .esriGeocoderResultOdd:focus {
+    /* default is #EDEDED, use a light blue instead */
+    background-color: #B5DAEA;
+}
+
+
+.esriPopup.modernGrey { 
+    box-shadow: 1px 1px 3px #dbdbdb;   
+    border-radius: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+    .esriPopup.modernGrey .titlePane {
+        line-height: 28px;
+        background: #f4f4f4;
+        background: -moz-linear-gradient(top, #f4f4f4 0, #e9e9e9 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#f4f4f4), color-stop(100%,#e9e9e9));
+        background: -webkit-linear-gradient(top, #f4f4f4 0,#e9e9e9 100%);
+        background: -o-linear-gradient(top, #f4f4f4 0,#e9e9e9 100%);
+        background: -ms-linear-gradient(top, #f4f4f4 0,#e9e9e9 100%);
+        background: linear-gradient(top, #f4f4f4 0,#e9e9e9 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e9e9e9',GradientType=0 );
+        color: #333;
+        border: 0;
+        border-bottom: 1px solid #dbdbdb;       
+        border-radius: 2px 2px 0 0;
+    }
+
+.dj_ie7 .esriPopup.modernGrey .titlePane, .dj_ie7 .esriPopup.modernGrey .titlePane .title {
+    background: #db652c;
+}
+
+.esriPopup.modernGrey .titleButton {
+    top: 6px;
+    background: url(../images/popup.png) no-repeat;
+}
+
+.esriPopup.modernGrey .pointer, .esriPopup.modernGrey .outerPointer {
+    background-image: url(../images/popup.png);
+}
+
+.esriPopup.modernGrey .titleButton, .esriPopup.modernGrey .pointer, .esriPopup.modernGrey .esriViewPopup .gallery .mediaHandle, .esriPopup.modernGrey .esriViewPopup .gallery .mediaIcon {
+    background-image: url(../images/popup.png);
+}
+
+.esriPopup.modernGrey .titlePane .spinner {
+    margin-top: 6px;
+    background: url('data:image/gif;base64,R0lGODlhEAAQAPMJABaFx/j6/DiXz4S+4QZ9wyaNytbp9KjR6Wav2uTw95jI5cbg8Eif03a33Vam1v///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJCgAJACwAAAAAEAAQAAAETDDJSau9NQjCiWxDYGmdBBCFkRVlcrCFOA3oNgXsQG2HRh0EAYWDIU6MGWSCR0G4ghRa7IjIUXCog6QzpRhYgC1HILsOGuJxGcNuTyIAIfkECQoADAAsAgAAAAwAEAAABFWQSQOUvJgVIlZmwQAQpIEZG0kgYAJuhUIASSAUIYEzwvASAwHhICEWOaQPSEUIKElCY8B44Ax0zuBvECiwEiMFzOliIJgF08WgAnA/C2FBeVEA1IwIACH5BAkKAA0ALAIAAAAMABAAAARTsMnZEqO4KXJoGAJBAGMgGYWoikMTpEW3iEA3EIXZ3IgedpKBwXW4ETKSFTLAOpgMLcmBIJAEEIToK9s4kAiLwAFmMq5wQxfpKxjopAQFcsJIICMAIfkECQoACQAsAgABAA0ADQAABEYwyUlTCDIMQYgYl7AkRtGdRMEtgVkc0mF2y5BiGUc3ADzptIpQsigWcRUUgnIANBKn5aRFGEA7r4vsBnXMUAWDZKnRfZARACH5BAkKAAwALAAAAgAQAAwAAARUkEkWhiBEjDB7KlhIFEY3IcXBHWDBTSXVBeDAlAuBJCajEIACgHEBbiSHIkbxCwkOkwEAI2AEp4peAkFY3BiD0UsS4MTILVWAJRjDQKIRr1cpatwRACH5BAUKAA0ALAAAAgAQAAwAAARTsMk5CBEjzBmGaodlFcZ2AAQQaGBBFCwjEsgWuIOUKKhVTiHBxrIY5IYEJEtiXFg2AsJhYxABFAnma9lAzBiS2+ugWaEA04nBJZoeMpvwIEo4biIAOw==') /*../images/ajax-loader.gif*/ no-repeat;
+}
+
+.esriPopup.modernGrey .titleButton.maximize {
+    right: 22px;
+    background-position: 0 -251px;
+    width: 11px;
+    height: 11px;
+    top: 8px;
+}
+
+.esriPopup.modernGrey .titleButton.next {
+    right: 46px;
+    background-position: 0 -443px;
+    width: 9px;
+    height: 17px;
+}
+
+.esriPopup.modernGrey .titleButton.prev {
+    right: 64px;
+    background-position: 0 -224px;
+    width: 9px;
+    height: 17px;
+}
+
+
+.esriPopup.modernGrey .titleButton.restore {
+    right: 22px;
+    background-position: 0 -787px;
+    width: 11px;
+    height: 11px;
+    /*top: 5px;*/
+    top: 8px;
+}
+
+.esriPopup.modernGrey .titleButton.close {
+    right: 3px;
+    background-position: 0 -171px;
+    width: 12px;
+    height: 17px;
+    top: 5px;
+}
+
+.esriPopup.modernGrey .contentPane {
+    background: #fff;
+    padding: 10px;
+    color: #333;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/*.esriPopup.modernGrey a {
+    color: #007ac2;
+}*/
+
+.esriPopup.modernGrey .esriViewPopup .hzLine {
+    border-top: 1px solid #ccc;
+}
+
+.esriPopup.modernGrey .actionsPane {
+    color: #333;
+    background: #fff;
+    padding: 10px;   
+    border-radius: 0 0 2px 2px;
+}
+
+.esriPopup.modernGrey .contentPane, .esriPopup.modernGrey .actionsPane {
+    border: 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+    .esriPopup.modernGrey .actionsPane .actionList a {
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        line-height: 16px;
+        height: 16px;
+    }
+
+        .esriPopup.modernGrey .actionsPane .actionList a:hover {
+            opacity: 0.75;
+        }
+
+    .esriPopup.modernGrey .actionsPane .actionList .LoadingComplete {
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        padding: 0;
+        margin: 0;
+        vertical-align: top;
+        margin-right: 5px;
+    }
+
+.esriPopup.modernGrey .titlePane .iconImg {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.esriPopup.modernGrey .titlePane .pageInfo {
+    display: inline-block;
+}
+
+.esriPopup.modernGrey .titlePane .titleInfo {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.esriPopup.modernGrey a {
+    color: #404040;
+}
+
+.esriPopup.modernGrey .zoomTo {
+    padding-left: 19px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABEVBMVEX///8AesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesIAesI+K5mLAAAAWnRSTlMAAAjnx+uGwytT6qGz8U8CevL78+mmHVjV+SoRbfUZ/AqsKA2yIdvgEEgv37HmYVsx3CJn4c9BBjCXnRSP5NKVeYhWF3C79MiTwei/3QcbKR8PUMneA83WsG91NLM6AAAAnElEQVR4Xo3PwxIDQRiF0fTQiG3btm3P+z9I0vXPMot8y1N3c01/hIiiRJopLYC+YSBGNotVdgftDgOcJD32eH0unQkBhP0MHqfpXRwgQUYwRGN6BiCbTGFQRb0EkMsXMHD1cgWgWts2mqjVljsEQLfXH4hDVhCoCQCazub0Yrlabx48ANofjtzpfLneKB4AuivsUwIwUpXX+8fXD9ioEXT/tfflAAAAAElFTkSuQmCC') /*../images/zoomTo.png*/ no-repeat left center;
+}
