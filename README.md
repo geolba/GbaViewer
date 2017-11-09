@@ -1,19 +1,17 @@
 # GbaViewer
 
-TThe GbaViewer helps you explore the geology around where you live.
+The GbaViewer helps you explore the geology around where you live.
 
 ## Getting Started
 
 * git clone https://github.com/geolba/GbaViewer.git 
-* set variable "geonamesuser" in web.config
-* set variable "app.geonamesuser" in scripts/app/config.js 
 
 See deployment for notes on how to deploy the project on a live system.
 
 ## Deployment
 
 * run: bower install (installs dependencies into bower_components)
-* run: npm run-script build
+* run: npm run-script build (for production environment)
 
 ## Versioning
 
