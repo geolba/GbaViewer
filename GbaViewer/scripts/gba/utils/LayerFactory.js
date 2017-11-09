@@ -375,6 +375,7 @@
                         };
                         //var layer = new utilities.WmsLayer(url, params);
                         var layer = new WmsLayer(url, params);
+                        layer.spatialReferences[0] = 3857;
                         //var layer = new esri.layers.WMSLayer(url, params);
                                            
                         var type = "WMSLayer";    

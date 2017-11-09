@@ -1,6 +1,5 @@
 {
-    "name": "gbaviewer",
-    "version": "1.0.0",
+    "name": "gbaviewer",   
     "license": "MIT",
     "dependencies": {
         "esri": "arcgis-js-api#3.22.0"

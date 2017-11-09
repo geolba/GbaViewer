@@ -87,33 +87,7 @@ var profile = {
     layers: {
         // This is the main loader module. It is a little special because it is treated like an AMD module even though
         // it is actually just plain JavaScript. There is some extra magic in the build system specifically for this
-        // module ID.
-        'dojo/dojo': {
-            // By default, the build system will try to include `dojo/main` in the built `dojo/dojo` layer, which adds
-            // a bunch of stuff we do not want or need. We want the initial script load to be as small and quick to
-            // load as possible, so we configure it as a custom, bootable base.
-            boot: true,
-            customBase: true,
-            include: [
-                "dojo/dojo",
-              // include the app
-              'app/main',
-              //// dpendencies of esri/map that will be requested if not included
-              //// probably in a nested require block or something the build script can't resolve
-              'dojox/gfx/path',
-              'dojox/gfx/svg',
-              'dojox/gfx/shape',
-              'dojo/cookie'
-              //'esri/dijit/Attribution',
-
-              // be sure to include the layer types used in your web map
-              // otherwise they will be requested asyncronously
-              //'esri/map', 'esri/dijit/Search', 'esri/layers/FeatureLayer', 'esri/InfoTemplate', 'esri/SpatialReference', 'esri/geometry/Extent'
-
-            ],
-            exclude: ["app/proj4js/proj4js-amd"]
-            //includeLocales: ['en', 'de']
-        },
+        // module ID.       
         "dojo/dojo": {
             // By default, the build system will try to include `dojo/main` in the built `dojo/dojo` layer, which adds
             // a bunch of stuff we do not want or need. We want the initial script load to be as small and quick to
@@ -121,12 +95,12 @@ var profile = {
             boot: true,
             customBase: true,
             include: [
-              // include the app, set accordingly for your application
-              // dependencies of esri/map that will be requested if not included
-              "dojo/dojo",
+               "dojo/dojo",
+              // dependencies that will be requested if not included             
               "dojo/text",
               "dojo/i18n",
-              "dojo/request/script"
+              "dojo/request/script",
+              "dojo/cookie"
             ],
             // You can define the locale for your application if you like
             includeLocales: ["en", "de"]
@@ -134,7 +108,8 @@ var profile = {
         "app/main": {
             include: [
               "app/main",
-              // a dynamically loaded modules:
+              //// dpendencies of esri/map that will be requested if not included
+              //// probably in a nested require block or something the build script can't resolve
               "dojox/gfx/path",
               "dojox/gfx/svg",
               "dojox/gfx/filters",
@@ -210,6 +185,6 @@ var profile = {
         "dom": 1,
         "host-browser": 1,
         "extend-dojo": 1
-    },
+    }
        
 };

@@ -4,7 +4,8 @@
     baseUrl: 'scripts',
     parseOnLoad: false,
     //mblAlwaysHideAddressBar:true,
-    debug: false,
+    debug: false,   
+    cacheBust: "1.0.1",
     //deps: ['app/main'],
     packages: [
         { name: "app", location: "app" },
