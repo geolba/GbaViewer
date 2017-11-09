@@ -11,7 +11,7 @@ See deployment for notes on how to deploy the project on a live system.
 ## Deployment
 
 * run: bower install (installs dependencies into bower_components)
-* run: npm run-script build
+* run: npm run-script build (for production environment)
 
 ## Versioning
 
